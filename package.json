@@ -1,0 +1,29 @@
+{
+  "name": "withHuskDemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "runScript": "./demo_script"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishaltyagi-jtg/DemoRepo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishaltyagi-jtg/DemoRepo/issues"
+  },
+  "homepage": "https://github.com/vishaltyagi-jtg/DemoRepo#readme",
+  "devDependencies": {
+    "husky": "^4.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run runScript"
+    }
+  }
+}
