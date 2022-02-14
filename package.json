@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "runScript": "./demo_script"
+    "runScript": "./demo_script",
+    "runScript-2": "./demo_2"
   },
   "repository": {
     "type": "git",
@@ -19,11 +20,25 @@
   },
   "homepage": "https://github.com/vishaltyagi-jtg/DemoRepo#readme",
   "devDependencies": {
-    "husky": "^4.3.0"
+    "commit-message-validator": "^1.0.2",
+    "husky": "^4.3.0",
+    "validate-branch-name": "^1.2.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run runScript"
+      "pre-commit": "npm run runScript && npx validate-branch-name",
+      "commit-msg": "commit-message-validator"
+    },
+    "validate-branch-name": {
+      "pattern": "^(TEST-[0-9]+|develop|main|release|dev-New-Project)",
+      "errorMsg": "[pre-commit-hook]: Your branch name is illegal. Please rename your branch name"
+    }
+  },
+  "config": {
+    "commit-message-validator": {
+      "_comment": "pattern can be Regex string or array of Regex string",
+      "pattern": "^(\\[NPE-[0-9].*\\]:+|Merge|hotfix)",
+      "errorMessage": "commit message does not follow the accpeted message formating"
     }
   }
 }
