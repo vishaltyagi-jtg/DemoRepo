@@ -28,17 +28,17 @@
     "hooks": {
       "pre-commit": "npm run runScript && npx validate-branch-name",
       "commit-msg": "commit-message-validator"
-    },
-    "validate-branch-name": {
-      "pattern": "^(TEST-[0-9]+|develop|main|release|dev-New-Project)",
-      "errorMsg": "[pre-commit-hook]: Your branch name is illegal. Please rename your branch name"
     }
+  },
+  "validate-branch-name": {
+    "pattern": "^(TEST-[0-9]+|develop|main|release|dev-New-Project)",
+    "errorMsg": "[pre-commit-hook]: Your branch name is illegal. Please rename your branch name"
   },
   "config": {
     "commit-message-validator": {
       "_comment": "pattern can be Regex string or array of Regex string",
-      "pattern": "^(\\[NPE-[0-9].*\\]:+|Merge|hotfix)",
-      "errorMessage": "commit message does not follow the accpeted message formating"
+      "pattern": "^(\\[TEST-[0-9].*\\]:+|Merge|hotfix)",
+      "errorMessage": "commit message does not follow the accpeted message formating([ticketc id]: <description>) for example: [TEST-111]: test"
     }
   }
 }
