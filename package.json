@@ -26,7 +26,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run validate-branch"
+      "pre-commit": "npm run validate-branch",
+      "commit-msg": "npm run validate-msg ${HUSKY_GIT_PARAMS}"
     }
   },
   "validate-branch-name": {
