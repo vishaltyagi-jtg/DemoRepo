@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "runScript": "./demo_script",
-    "runScript-2": "./demo_2"
+    "validate-branch": "hooks/pre-commit",
+    "validate-msg": "hooks/commit-msg"
   },
   "repository": {
     "type": "git",
@@ -26,8 +26,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run runScript && npx validate-branch-name",
-      "commit-msg": "commit-message-validator"
+      "pre-commit": "npm run validate-branch"
     }
   },
   "validate-branch-name": {
